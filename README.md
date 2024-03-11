@@ -23,6 +23,18 @@ Welcome to Python! In today's lecture, we will discuss the Python Fundamentals i
 2. Now that your `pipenv` virtual environment is ready to use, enter `pipenv shell` to enter the virtual environment.
 3. Run `pytest` from inside of the `EAST-SE-012924-Phase-3` directory to run the tests (if you can see `lib`, `Pipfile`, `Pipfile.lock`, `pytest.ini`, and `README.md` in your current working directory, then you are in the correct directory), and begin working to pass the tests. You can also run `pytest -x` to run one test at a time.
 
+## Deliverables
+
+1. Use the `print()` function to print the string `Hello Flatiron! Class is in session!`
+2. Create a function called `add()` that has two parameters. The two arguments passed to the `add()` function should be either integers or floats. The `add()` function should add the two numbers and return the sum of the two numbers. The `add()` function should raise an Exception (using `raise Exception`) if either of the two arguments passed to the `add()` function is not an integer or float value.
+3. Create a function called `subtract()` that has two parameters. The two arguments passed to the `subtract()` function should be either integers or floats. The `subtract()` function should subtract the two numbers and return the difference of the two numbers. The `subtract()` function should raise an Exception (using `raise Exception`) if either of the two arguments passed to the `subtract()` function is not an integer or float value.
+4. Create a function called `multiply()` that has two parameters. The two arguments passed to the `multiply()` function should be either integers or floats. The `multiply()` function should multiply the two numbers and return the product of the two numbers. The `multiply()` function should raise an Exception (using `raise Exception`) if either of the two arguments passed to the `multiply()` function is not an integer or float value.
+5. Create a function called `divide()` that has two parameters. The two arguments passed to the `divide()` function should be either integers or floats, and the second argument cannot be equal to 0. The `divide()` function should divide the two numbers and return the quotient of the two numbers. The `divide()` function should raise an Exception (using `raise Exception`) if either of the two arguments passed to the `divide()` function is not an integer or float value, or if the second argument is equal to 0.
+6. Create a function called `calculator()` that has three parameters. The first argument passed to the `calculator()` function should be a string with the value of `+`, `-`, `*`, or `/` since it represents the operation to be performed on two numbers. The second and third arguments passed to the `calculator()` function should be either integers or floats. The `calculator()` function should perform the operation (`+`, `-`, `*`, or `/`) specified by the first input argument on the second and third input arguments (the numbers) and return the result. The `calculator()` function should raise an Exception (using `raise Exception`) if any other value is passed into the first parameter for the `calculator()` function.
+7. Create a function called `print_greeting_loop()` that has one parameter which is a string. The `print_greeting_loop()` should print each character of the string separately.
+- Hint 1: You can use the `print()` function to print a value.
+- Hint 2: You can use a `for` loop to iterate through a string's characters.
+
 ---
 
 
