@@ -1,16 +1,18 @@
 import ipdb
 
 def combine_sequences(seq1, seq2):
-    pass
+    return seq1 + seq2
 
 def sequence_n_times(seq, n):
-    pass
+    return seq * n
 
 def average(seq):
-    pass
+    return sum(seq) / len(seq)
 
 def append_n_times(input_list, element, n):
-    pass
+    for i in range(n):
+        input_list.append(element)
+    return input_list
 
 foods = [
     {
@@ -27,6 +29,10 @@ foods = [
     }
 ]
 
+food_names = [food['name'] for food in foods]
+food_prices = [food['price'] for food in foods]
+average_price = sum(food_prices) / len(food_prices)
+
 animals = [
     {
         "name": "Fido",
@@ -41,3 +47,5 @@ animals = [
         "animal_type": "Guinea Pig"
     }
 ]
+
+animal_descriptions = [f"{animal['name']} is a {animal['animal_type']}" for animal in animals]
