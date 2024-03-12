@@ -9,19 +9,8 @@ def sequence_n_times(seq, n):
 def average(seq):
     pass
 
-def append_n_times(seq, element, n):
+def append_n_times(input_list, element, n):
     pass
-
-# Deliverable # 1: Make a List Comprehension that constructs
-#                  a list from the names of the foods. Print
-#                  the result to the console.
-
-# Deliverable # 2: Make a List Comprehension that constructs
-#                  a list from the prices of the foods. Store
-#                  the result of this List Comprehension in a
-#                  variable. Then, get the average price of
-#                  the prices in the list. Print the result to
-#                  the console.
 
 foods = [
     {
@@ -38,15 +27,6 @@ foods = [
     }
 ]
 
-# Write Code for Deliverable # 1 here
-
-# Write Code for Deliverable # 2 here
-
-# Deliverable # 3: Make a List Comprehension that constructs a list
-#                  such that each item in the list will be in the
-#                  following format "{animal['name']} is a {animal['animal_type']}".
-#                  Print the result to the console.
-
 animals = [
     {
         "name": "Fido",
@@ -61,5 +41,3 @@ animals = [
         "animal_type": "Guinea Pig"
     }
 ]
-
-# Write Code for Deliverable # 3 here
