@@ -29,3 +29,15 @@ class TestAppPy:
         '''append_n_times() returns a list with an element appended n times.'''
         seq = ['f', 'l', 'a', 't', 'i', 'r', 'o', 'n']
         assert(append_n_times(seq, 'a', 4) == ['f', 'l', 'a', 't', 'i', 'r', 'o', 'n', 'a', 'a', 'a', 'a'])
+
+    def test_food_names_list(self):
+        '''food_names has a list of the food names'''
+        assert(food_names == ["Flatburger", "French Fries", "Burrito"])
+
+    def test_average_price(self):
+        '''average_price has the average price of the foods'''
+        assert(average_price == (10.99 + 1.99 + 7.99) / 3)
+
+    def test_animal_descriptions(self):
+        '''animal_descriptions has a list of strings describing each animal. For example: Fido is a Dog'''
+        assert(animal_descriptions == ["Fido is a Dog", "Kitty is a Cat", "Fluffy is a Guinea Pig"])

@@ -49,22 +49,22 @@ foods = [
 ]
 ```
 
-Make a List Comprehension that constructs a list from the names of the `foods`. Store the result of this List Comprehension into a variable called `food_names`. Then, use the `print()` function to `print(food_names)` to the console.
+Make a List Comprehension that constructs a list from the names of the `foods`. Store the result of this List Comprehension into a variable called `food_names`.
 
 ``` python
-print(food_names)
+food_names
 # => ["Flatburger", "French Fries", "Burrito"]
 ```
 
-6. Make a List Comprehension that constructs a list from the prices of the `foods`. Store the result of this List Comprehension into a variable called `food_prices`. Then, get the average price of the prices in the list stored in the `food_prices` variable and store that result in a variable called `average_price`. Use the `print()` function to `print(average_price)` to the console.
+6. Make a List Comprehension that constructs a list from the prices of the `foods`. Store the result of this List Comprehension into a variable called `food_prices`. Then, get the average price of the prices in the list stored in the `food_prices` variable and store that result in a variable called `average_price`.
 
 ``` python
-print(food_prices)
+food_prices
 # => 20.97
 ```
 
 ``` python
-print(average_price)
+average_price
 # => 6.989999999999999
 ```
 
@@ -87,9 +87,9 @@ animals = [
 ]
 ```
 
-Make a List Comprehension that constructs a list such that each item in the list with be in the following format: `Fido is a Dog`. Store the result of this List Comprehension into a variable called `animal_descriptions`. Then, use the `print()` function to `print(animal_descriptions)` to the console.
+Make a List Comprehension that constructs a list such that each item in the list with be in the following format: `Fido is a Dog`. Store the result of this List Comprehension into a variable called `animal_descriptions`.
 
 ``` python
-print(animal_descriptions)
+animal_descriptions
 # => ["Fido is a Dog", "Kitty is a Cat", "Fluffy is a Guinea Pig"]
 ```
