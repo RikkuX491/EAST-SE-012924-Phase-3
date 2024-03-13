@@ -8,6 +8,8 @@
 - Instance methods
 - Self
 - Object properties
+- Using the `@property` decorator
+- Modifying the `__repr__` instance method for a class
 
 ## Introduction
 
