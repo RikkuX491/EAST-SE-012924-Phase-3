@@ -1,13 +1,16 @@
 import ipdb
 
+# Deliverable 1
 class Car:
     
     def __init__(self, make, model, year, horn_volume = 1):
+        # Deliverable 2
         self.make = make
         self.model = model
         self.year = year
         self.horn_volume = horn_volume
 
+    # Deliverable 3
     @property
     def year(self):
         return self._year
@@ -19,6 +22,7 @@ class Car:
         else:
             raise ValueError("Year must be an integer and must be between 1900 and 2023!")
     
+    # Deliverable 4
     @property
     def horn_volume(self):
         return self._horn_volume
@@ -29,7 +33,8 @@ class Car:
             self._horn_volume = horn_volume_parameter
         else:
             raise ValueError("Horn volume must be an integer!")
-        
+
+    # Deliverable 5
     @property
     def make(self):
         return self._make
@@ -41,10 +46,6 @@ class Car:
         else:
             raise ValueError("Make must be a string and must be at least 3 characters long!")
         
+    # Deliverable 6
     def honk_horn(self):
         print(f"BEEP BEEP{'!' * self.horn_volume}")
-
-# car1 = Car("Honda", "Odyssey", 2010)
-# car2 = Car("Toyota", "Camry", 2011, 7)
-
-# ipdb.set_trace()
