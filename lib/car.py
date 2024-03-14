@@ -1,12 +1,16 @@
 import ipdb
 
 class Car:
+
+    all = []
     
     def __init__(self, make, model, year, horn_volume = 1):
         self.make = make
         self.model = model
         self.year = year
         self.horn_volume = horn_volume
+
+        Car.all.append(self)
 
     @property
     def year(self):
@@ -43,3 +47,25 @@ class Car:
         
     def honk_horn(self):
         print(f"BEEP BEEP{'!' * self.horn_volume}")
+
+    @property
+    def model(self):
+        return self._model
+    
+    @model.setter
+    def model(self, model_parameter):
+        if(not hasattr(self, 'model')) and (isinstance(model_parameter, str)):
+            self._model = model_parameter
+        else:
+            raise ValueError("Model cannot be changed and must be a string!")
+        
+    @classmethod
+    def average_year(cls):
+        # total_year_value = sum([car.year for car in cls.all])
+        # return int(total_year_value / len(cls.all))
+        list_of_years = [car.year for car in cls.all]
+        return int(sum(list_of_years) / len(list_of_years))
+        
+car1 = Car("Honda", "Odyssey", 2010)
+car2 = Car("Toyota", "Camry", 2020, 7)
+ipdb.set_trace()
