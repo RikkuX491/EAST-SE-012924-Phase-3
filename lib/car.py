@@ -43,8 +43,3 @@ class Car:
         
     def honk_horn(self):
         print(f"BEEP BEEP{'!' * self.horn_volume}")
-
-# car1 = Car("Honda", "Odyssey", 2010)
-# car2 = Car("Toyota", "Camry", 2011, 7)
-
-# ipdb.set_trace()
