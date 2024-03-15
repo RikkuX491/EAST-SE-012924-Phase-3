@@ -89,10 +89,10 @@ buddy.obedience_level
 6. Create an instance method in the `Dog` class, `make_animal_sound()` that will print the following string to the console: "Bark" followed by some exclamation marks `!` where the number of exclamation marks should be dependent on the value of the `bark_volume` for the `Dog` instance. For example, if the `Dog` instance's `bark_volume` is 3, the following string should be printed to the console: "Bark!!!"
 
 ```py
-cooper = Dog("Cooper", 4)
+cooper = Dog("Cooper", 4, 5)
 
-animal2.make_animal_sound()
-# "Animal Sound!"
+cooper.make_animal_sound()
+# "Bark!!!!!"
 ```
 
 7. Create a class attribute, `all`, in the `Dog` class. We will use this attribute to keep track of
