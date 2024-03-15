@@ -5,7 +5,7 @@ from os import path
 import runpy
 import io
 import sys
-from car import *
+from animal import *
 
-class TestCarPy:
-    '''car.py'''
+class TestAnimalPy:
+    '''animal.py'''
