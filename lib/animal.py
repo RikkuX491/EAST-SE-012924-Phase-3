@@ -29,6 +29,7 @@ class Dog(Animal):
         self.obedience_level = obedience_level
         self.bark_volume = bark_volume
 
+        # Deliverable 7
         Dog.all.append(self)
 
     # Deliverable 6
