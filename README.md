@@ -68,3 +68,62 @@ Write your code in `lib/many_to_many.py` (the `many_to_many.py` file in the `lib
   - Texts must be between 3 and 40 characters, inclusive
   - Should **not be able** to change after the review is instantiated.
   - _hint: hasattr()_
+
+### Object Relationship Methods and Properties
+
+#### Review
+
+- `Review property hotel`
+  - Returns the hotel object for that review.
+  - Must be of type `Hotel`.
+  - Hotels **can be changed** after the review object is initialized.
+- `Review property customer`
+  - Returns the customer object for that review.
+  - Must be of type `Customer`.
+  - Customers **can be changed** after the review object is initialized.
+
+#### Customer
+
+- `Customer reviews()`
+  - Returns a list of all the reviews the customer has submitted.
+  - Must be of type `Review`.
+- `Customer hotels()`
+  - Returns a **unique** list of hotels for which the customer has left a review for.
+  - Must be of type `Hotel`.
+
+#### Hotel
+
+- `Hotel reviews()`
+  - Returns a list of all the reviews the hotel has received.
+  - Must be of type `Review`.
+- `Hotel customers()`
+  - Returns a **unique** list of customers who have left a review for this hotel.
+  - Must be of type `Customer`.
+
+### Aggregate and Association Methods
+
+#### Customer
+
+- `Customer submit_review(hotel, rating, text)`
+  - Receives a `Hotel` instance, a rating, and text as arguments.
+  - Creates and returns a new `Review` instance and associates it with that
+    customer, the hotel, rating, and text provided.
+- `Customer hotel_names()`
+  - Returns a **unique** list of strings with the names of the hotels
+    the customer has left a review for.
+  - Returns `None` if the customer has no reviews.
+
+#### Hotel
+
+- `Hotel review_texts()`
+  - Returns a list of the text strings of all reviews submitted for that
+    hotel.
+  - Returns `None` if the hotel has no reviews.
+- `Hotel average_rating()`
+  - Returns the average rating for that hotel.
+  - Returns `None` if the hotel has no reviews.
+- `Hotel customers_more_than_three_reviews()`
+  - Returns a list of customers who have submitted more than 3 reviews for the
+    hotel.
+  - Customers must be of type `Customer`
+  - Returns `None` if the hotel has no customers with more than 3 reviews submitted for that hotel.
