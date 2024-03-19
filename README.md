@@ -12,7 +12,7 @@
   - `.schema`
   - `.quit`
   - `.headers on` (Formats SQL output - output the name of each column)
-  - `.mode column` (Formats SQL output - now we are in column mode, enabling us to run the next two .width commands)
+  - `.mode column` (Formats SQL output - now we are in column mode, enabling us to run .width commands)
   - `.width auto` (Formats SQL output - adjusts and normalizes column width)
 - SQLite Data Types
   - `INTEGER`
