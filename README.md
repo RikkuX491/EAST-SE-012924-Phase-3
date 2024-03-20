@@ -69,6 +69,8 @@ Note: You can run `sqlite3 hotel_reviews.db < sql_code_files/create_tables_if_no
 
 2. In the `sql_code_files` directory (folder), there is a file named `drop_tables_if_exists.sql`. Inside of this file, write SQL statements using `DROP TABLE IF EXISTS` to drop the `hotels`, `customers`, and `reviews` tables.
 
+Note: You can run `sqlite3 hotel_reviews.db < sql_code_files/drop_tables_if_exists.sql` to run your SQL code from the `drop_tables_if_exists.sql` to make changes to the `hotel_reviews.db` database file. When successfully executed, the code for Deliverable # 2 will drop the tables from the `hotel_reviews.db` database, so make sure to run `sqlite3 hotel_reviews.db < sql_code_files/create_tables_if_not_exists.sql` to run your code to create the tables again before moving on to Deliverable # 3.
+
 3. In the `sql_code_files` directory (folder), there is a file named `insert_into_tables.sql`. Inside of this file, write SQL statements using `INSERT INTO` to insert (create) the following rows:
    - A row in the `hotels` table with the `name` "Marriott".
    - A row in the `customers` table with the `first_name` of "Alice" and `last_name` of "Baker".
