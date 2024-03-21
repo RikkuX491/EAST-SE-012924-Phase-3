@@ -253,6 +253,26 @@ The `find_by_id()` method will retrieve the row from the `hotels` table with the
 
 ***
 
+### UPDATE
+
+In `lib/models/hotel.py`, add the following instance method in the `Hotel` model (class):
+
+```py
+def update(self):
+    """Update the table row corresponding to the current Hotel instance."""
+    sql = """
+        UPDATE hotels
+        SET name = ?
+        WHERE id = ?
+    """
+    CURSOR.execute(sql, (self.name, self.id))
+    CONN.commit()
+```
+
+The `update()` method will update the row from the `hotels` table with the instance's `id`.
+
+***
+
 ### DELETE
 
 In `lib/models/hotel.py`, add the following instance method in the `Hotel` model (class):
@@ -275,23 +295,3 @@ def delete(self):
 ```
 
 The `delete()` method will delete the row from the `hotels` table with the instance's `id` and also remove it from the `all` class variable in the `Hotel` model (class).
-
-***
-
-### UPDATE
-
-In `lib/models/hotel.py`, add the following instance method in the `Hotel` model (class):
-
-```py
-def update(self):
-    """Update the table row corresponding to the current Hotel instance."""
-    sql = """
-        UPDATE hotels
-        SET name = ?
-        WHERE id = ?
-    """
-    CURSOR.execute(sql, (self.name, self.id))
-    CONN.commit()
-```
-
-The `update()` method will update the row from the `hotels` table with the instance's `id`.
