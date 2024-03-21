@@ -67,7 +67,6 @@ class Hotel:
     @classmethod
     def instance_from_db(cls, row):
         # Return a Hotel object having the attribute values from the table row.
-        
         hotel = cls(row[1])
         hotel.id = row[0]
         return hotel
@@ -113,7 +112,6 @@ class Hotel:
 
     def delete(self):
         # Delete the table row corresponding to the current Hotel instance and remove it from the all class variable
-
         sql = """
             DELETE FROM hotels
             WHERE id = ?
@@ -126,8 +124,9 @@ class Hotel:
         Hotel.all = [hotel for hotel in Hotel.all if hotel.id != self.id]
 
     def reviews(self):
+        # One-to-many relationship: 1 Hotel has many Reviews
         from models.review import Review
-        
+
         sql = """
             SELECT *
             FROM reviews
@@ -139,4 +138,19 @@ class Hotel:
         return [Review.instance_from_db(row) for row in rows]
     
     def customers(self):
-        pass
+        # Many-to-many relationship: There is a Many-to-many relationship for Hotel and Customer.
+        # This method will retrieve a Hotel's Customers.
+        from models.customer import Customer
+
+        sql = """
+            SELECT customers.id, customers.first_name, customers.last_name
+            FROM customers
+            INNER JOIN reviews
+            ON customers.id = reviews.customer_id
+            WHERE reviews.hotel_id = ?
+            GROUP BY customers.id
+        """
+
+        rows = CURSOR.execute(sql, (self.id,)).fetchall()
+
+        return [Customer.instance_from_db(row) for row in rows]
