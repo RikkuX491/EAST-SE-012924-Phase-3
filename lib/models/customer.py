@@ -26,7 +26,7 @@ class Customer:
     
     @last_name.setter
     def last_name(self, last_name_parameter):
-        if(not hasattr(self, 'last_name')) and (isinstance(last_name_parameter, str)) and (len(last_name_parameter) > 0):
+        if(isinstance(last_name_parameter, str)) and (len(last_name_parameter) > 0):
             self._last_name = last_name_parameter
         else:
             raise ValueError("Last Name must be a string at least 1 character long!")
