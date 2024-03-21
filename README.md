@@ -55,7 +55,9 @@ We can access the constants within those files by adding the `import` statement 
 
 ## Code Along
 
-In `lib/models/hotel.py`, add the following class method code in the `Hotel` model (class):
+### Creating the tables
+
+1. In `lib/models/hotel.py`, add the following class method code in the `Hotel` model (class):
 
 ```py
 @classmethod
@@ -71,7 +73,7 @@ def create_table(cls):
 
 `CURSOR.execute(sql)` will execute the SQL statement contained within the `sql` variable to create the `hotels` table in the `hotel_reviews.db` database.
 
-In `lib/models/customer.py`, add the following class method code in the `Customer` model (class):
+2. In `lib/models/customer.py`, add the following class method code in the `Customer` model (class):
 
 ```py
 @classmethod
@@ -88,7 +90,7 @@ def create_table(cls):
 
 `CURSOR.execute(sql)` will execute the SQL statement contained within the `sql` variable to create the `customers` table in the `hotel_reviews.db` database.
 
-In `lib/models/review.py`, add the following class method code in the `Review` model (class):
+3. In `lib/models/review.py`, add the following class method code in the `Review` model (class):
 
 ```py
 @classmethod
@@ -106,3 +108,47 @@ def create_table(cls):
 ```
 
 `CURSOR.execute(sql)` will execute the SQL statement contained within the `sql` variable to create the `reviews` table in the `hotel_reviews.db` database.
+
+### Dropping the tables
+
+1. In `lib/models/hotel.py`, add the following class method code in the `Hotel` model (class):
+
+```py
+@classmethod
+def drop_table(cls):
+    """ Drop the table that persists Hotel instances """
+    sql = """
+        DROP TABLE IF EXISTS hotels;
+    """
+    CURSOR.execute(sql)
+```
+
+`CURSOR.execute(sql)` will execute the SQL statement to drop the `hotels` table from the `hotel_reviews.db` database.
+
+2. In `lib/models/customer.py`, add the following class method code in the `Customer` model (class):
+
+```py
+@classmethod
+def drop_table(cls):
+    """ Drop the table that persists Customer instances """
+    sql = """
+        DROP TABLE IF EXISTS customers;
+    """
+    CURSOR.execute(sql)
+```
+
+`CURSOR.execute(sql)` will execute the SQL statement to drop the `customers` table from the `hotel_reviews.db` database.
+
+3. In `lib/models/review.py`, add the following class method code in the `Review` model (class):
+
+```py
+@classmethod
+def drop_table(cls):
+    """ Drop the table that persists Review instances """
+    sql = """
+        DROP TABLE IF EXISTS reviews;
+    """
+    CURSOR.execute(sql)
+```
+
+`CURSOR.execute(sql)` will execute the SQL statement to drop the `reviews` table from the `hotel_reviews.db` database.
