@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 import ipdb;
 
-from classes.many_to_many import Hotel
-from classes.many_to_many import Customer
-from classes.many_to_many import Review
+from models.__init__ import CONN, CURSOR
+from models.hotel import Hotel
+from models.customer import Customer
+from models.review import Review
 
 if __name__ == '__main__':
     # don't remove this line, it's for debugging!
