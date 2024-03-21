@@ -154,3 +154,31 @@ def drop_table(cls):
 ```
 
 `CURSOR.execute(sql)` will execute the SQL statement to drop the `reviews` table from the `hotel_reviews.db` database.
+
+***
+
+### INSERT INTO (Create)
+
+1. In `lib/models/hotel.py`, add the following instance method code in the `Hotel` model (class):
+
+```py
+def save(self):
+    """ Insert a new row with the name value of the current Hotel instance.
+    Update object id attribute using the primary key value of new row.
+    """
+    sql = """
+        INSERT INTO hotels (name)
+        VALUES (?)
+    """
+
+    CURSOR.execute(sql, (self.name,))
+    CONN.commit()
+
+    self.id = CURSOR.lastrowid
+
+    Hotel.all.append(self)
+```
+
+`CURSOR.execute(sql)` will execute the SQL statement to insert a new row with the name of "Marriott" for the hotel into the `hotel_reviews.db` database. `CONN.commit()` allows for the changes when inserting, updating, or deleting rows to be committed to the database. Without `CONN.commit()`, the new row will not be added to the `hotels` table.
+
+Try to write the code for the `save()` instance method for the `Customer` model (class) in `lib/models/customer.py` and the `save()` instance method for the `Review` model (class) in `lib/models/review.py`!
