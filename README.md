@@ -14,7 +14,7 @@ In today's lecture, we will discuss about Object-Relational Mapping to allow for
 1. Make sure that your current working directory (folder) contains a `Pipfile`, then run `pipenv install` in your terminal to install the packages in the `Pipfile` into the pipenv virtual environment.
 2. Now that your `pipenv` virtual environment is ready to use, enter `pipenv shell` to enter the virtual environment.
 
-## Code Along
+## Starter Code
 
 You can run `python lib/debug.py` in the terminal to run the code in `debug.py` and enter an `ipdb` debugging session to test / debug your code written in the models.
 
