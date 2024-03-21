@@ -52,3 +52,57 @@ from models.__init__ import CONN, CURSOR
 ```
 
 We can access the constants within those files by adding the `import` statement before the class declaration.
+
+## Code Along
+
+In `lib/models/hotel.py`, add the following class method code in the `Hotel` model (class):
+
+```py
+@classmethod
+def create_table(cls):
+    """ Create a new table to persist the attributes of Hotel instances """
+    sql = """
+        CREATE TABLE IF NOT EXISTS hotels (
+        id INTEGER PRIMARY KEY,
+        name TEXT)
+    """
+    CURSOR.execute(sql)
+```
+
+`CURSOR.execute(sql)` will execute the SQL statement contained within the `sql` variable to create the `hotels` table in the `hotel_reviews.db` database.
+
+In `lib/models/customer.py`, add the following class method code in the `Customer` model (class):
+
+```py
+@classmethod
+def create_table(cls):
+    """ Create a new table to persist the attributes of Customer instances """
+    sql = """
+        CREATE TABLE IF NOT EXISTS customers (
+        id INTEGER PRIMARY KEY,
+        first_name TEXT,
+        last_name TEXT)
+    """
+    CURSOR.execute(sql)
+```
+
+`CURSOR.execute(sql)` will execute the SQL statement contained within the `sql` variable to create the `customers` table in the `hotel_reviews.db` database.
+
+In `lib/models/review.py`, add the following class method code in the `Review` model (class):
+
+```py
+@classmethod
+def create_table(cls):
+    """ Create a new table to persist the attributes of Review instances """
+    sql = """
+        CREATE TABLE IF NOT EXISTS reviews (
+        id INTEGER PRIMARY KEY,
+        rating INTEGER,
+        text TEXT,
+        hotel_id INTEGER,
+        customer_id INTEGER)
+    """
+    CURSOR.execute(sql)
+```
+
+`CURSOR.execute(sql)` will execute the SQL statement contained within the `sql` variable to create the `reviews` table in the `hotel_reviews.db` database.
