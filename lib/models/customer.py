@@ -30,3 +30,5 @@ class Customer:
     
     def hotels(self):
         return list(set([review.hotel for review in self.reviews()]))
+    
+    # add new ORM methods after existing methods

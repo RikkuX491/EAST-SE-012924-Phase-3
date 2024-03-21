@@ -49,3 +49,5 @@ class Review:
         from models.customer import Customer
         if(isinstance(customer_parameter, Customer)):
             self._customer = customer_parameter
+
+    # add new ORM methods after existing methods
