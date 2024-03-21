@@ -4,13 +4,12 @@ class Review:
 
     all = []
     
-    def __init__(self, hotel, customer, rating, text):
-        self.hotel = hotel
-        self.customer = customer
+    def __init__(self, rating, text, hotel_id, customer_id):
         self.rating = rating
         self.text = text
-
-        Review.all.append(self)
+        self.hotel_id = hotel_id
+        self.customer_id = customer_id
+        self.id = None
 
     @property
     def rating(self):
@@ -18,8 +17,10 @@ class Review:
     
     @rating.setter
     def rating(self, rating_parameter):
-        if(not hasattr(self, 'rating')) and (isinstance(rating_parameter, int)) and (1 <= rating_parameter <= 5):
+        if(isinstance(rating_parameter, int)) and (1 <= rating_parameter <= 5):
             self._rating = rating_parameter
+        else:
+            raise ValueError("Rating must be an integer between 1 and 5!")
 
     @property
     def text(self):
@@ -27,27 +28,37 @@ class Review:
     
     @text.setter
     def text(self, text_parameter):
-        if(not hasattr(self, 'text')) and (isinstance(text_parameter, str)) and (3 <= len(text_parameter) <= 40):
+        if(isinstance(text_parameter, str)) and (3 <= len(text_parameter) <= 40):
             self._text = text_parameter
+        else:
+            raise ValueError("Text must be a string between 3 and 40 characters long!")
 
     @property
+    def hotel_id(self):
+        return self._hotel_id
+    
+    @hotel_id.setter
+    def hotel_id(self, hotel_id_parameter):
+        if(isinstance(hotel_id_parameter, int)):
+            self._hotel_id = hotel_id_parameter
+        else:
+            raise ValueError("Hotel ID must be an integer!")
+
+    @property
+    def customer_id(self):
+        return self._customer_id
+    
+    @customer_id.setter
+    def customer_id(self, customer_id_parameter):
+        if(isinstance(customer_id_parameter, int)):
+            self._customer_id = customer_id_parameter
+        else:
+            raise ValueError("Customer ID must be an integer!")
+        
     def hotel(self):
-        return self._hotel
-    
-    @hotel.setter
-    def hotel(self, hotel_parameter):
-        from models.hotel import Hotel
-        if(isinstance(hotel_parameter, Hotel)):
-            self._hotel = hotel_parameter
+        pass
 
-    @property
     def customer(self):
-        return self._customer
-    
-    @customer.setter
-    def customer(self, customer_parameter):
-        from models.customer import Customer
-        if(isinstance(customer_parameter, Customer)):
-            self._customer = customer_parameter
+        pass
 
     # add new ORM methods after existing methods

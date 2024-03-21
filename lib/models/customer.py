@@ -1,10 +1,13 @@
 from models.__init__ import CONN, CURSOR
 
 class Customer:
+
+    all = []
     
     def __init__(self, first_name, last_name):
         self.first_name = first_name
         self.last_name = last_name
+        self.id = None
 
     @property
     def first_name(self):
@@ -12,8 +15,10 @@ class Customer:
     
     @first_name.setter
     def first_name(self, first_name_parameter):
-        if(not hasattr(self, 'first_name')) and (isinstance(first_name_parameter, str)) and (len(first_name_parameter) > 0):
+        if(isinstance(first_name_parameter, str)) and (len(first_name_parameter) > 0):
             self._first_name = first_name_parameter
+        else:
+            raise ValueError("First Name must be a string at least 1 character long!")
 
     @property
     def last_name(self):
@@ -23,12 +28,13 @@ class Customer:
     def last_name(self, last_name_parameter):
         if(not hasattr(self, 'last_name')) and (isinstance(last_name_parameter, str)) and (len(last_name_parameter) > 0):
             self._last_name = last_name_parameter
+        else:
+            raise ValueError("Last Name must be a string at least 1 character long!")
 
     def reviews(self):
-        from models.review import Review
-        return [review for review in Review.all if review.customer is self]
+        pass
     
     def hotels(self):
-        return list(set([review.hotel for review in self.reviews()]))
+        pass
     
     # add new ORM methods after existing methods

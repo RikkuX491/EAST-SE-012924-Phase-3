@@ -1,9 +1,12 @@
 from models.__init__ import CONN, CURSOR
 
 class Hotel:
+
+    all = []
     
     def __init__(self, name):
         self.name = name
+        self.id = None
 
     @property
     def name(self):
@@ -13,12 +16,13 @@ class Hotel:
     def name(self, name_parameter):
         if(isinstance(name_parameter, str)) and (5 <= len(name_parameter) <= 20):
             self._name = name_parameter
+        else:
+            raise ValueError("Name must be a string between 5 and 20 characters long!")
 
     def reviews(self):
-        from models.review import Review
-        return [review for review in Review.all if review.hotel is self]
+        pass
     
     def customers(self):
-        return list(set([review.customer for review in self.reviews()]))
+        pass
     
     # add new ORM methods after existing methods
