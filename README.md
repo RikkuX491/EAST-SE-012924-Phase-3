@@ -109,6 +109,8 @@ def create_table(cls):
 
 `CURSOR.execute(sql)` will execute the SQL statement contained within the `sql` variable to create the `reviews` table in the `hotel_reviews.db` database.
 
+***
+
 ### Dropping the tables
 
 1. In `lib/models/hotel.py`, add the following class method code in the `Hotel` model (class):
