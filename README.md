@@ -3,6 +3,8 @@
 ## Lecture Topics
 
 - Building a CLI in Python
+- Using the `break` statement to break from a loop
+- Using the `quit()` function to exit the Python program
 
 ## Introduction
 
